@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         updateScale();
         
         groundedPlayer = controller.isGrounded;
+
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
@@ -43,15 +44,42 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+        
     }
-    
+
     void updateScale() {
-        if (Input.GetMouseButtonDown(0)) {
-            playerSize += 0.1f;
-        } else if (Input.GetMouseButtonDown(1)) {
-            playerSize -= 0.1f;
-        }        
+        if (Input.GetKeyDown("q")) {
+            if (playerSize == 3f) {
+                playerSize = 2f;
+            }
+            else if (playerSize == 2f) {
+                playerSize = 1f;
+            }
+            else {
+                return;
+            }
+        }       
         
         gameObject.transform.localScale = new Vector3(playerSize, playerSize, playerSize); 
     }
+
+    // acts to grow the size to one of three different sizes if you are in water
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "water") {
+            if (Input.GetKeyDown("e")) {
+                if (playerSize == 1f) {
+                    playerSize = 2f;
+                }
+                else if (playerSize == 2f) {
+                    playerSize = 3f;
+                }
+                else {
+                    return;
+                }
+                gameObject.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
+                gameObject.transform.position = new Vector3(0, 0, 0);
+            }
+        }
+    }
+
 }
