@@ -7,13 +7,20 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField]
     GameObject door;
     
-    bool isOpened = false;
+    public bool isOpened = false;
+    public bool hold = false;
     
     void OnTriggerEnter(Collider col) {
-        if (!isOpened && col.transform.localScale.x >= 2) {
-            door.transform.position += new Vector3(0, 4, 0);
-            this.transform.position += new Vector3(0, -0.25f, 0);
+        if (!isOpened && col.transform.localScale.x >= transform.localScale.x) {
+            this.transform.position += new Vector3(0, -0.15f, 0);
             isOpened = true;
+        }
+    }
+    
+    void OnTriggerExit(Collider col) {
+        if (hold && isOpened && col.transform.localScale.x >= transform.localScale.x) {
+            this.transform.position -= new Vector3(0, -0.15f, 0);
+            isOpened = false;
         }
     }
     
