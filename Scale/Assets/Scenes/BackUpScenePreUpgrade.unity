@@ -463,6 +463,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7356074458097608248, guid: 11aaa30b463d240a4923fac5ced5f261, type: 3}
   m_PrefabInstance: {fileID: 2059941818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &85487053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1166042723776195286, guid: 0070cbfa44f06144c8ec4f160e4089de, type: 3}
+  m_PrefabInstance: {fileID: 925669288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &85487057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1166042723776195291, guid: 0070cbfa44f06144c8ec4f160e4089de, type: 3}
@@ -3794,7 +3799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e985da2fc3ca409ea638321b07620e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &490220898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4006,7 +4011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &499925572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4491,6 +4496,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1273091854}
     m_Modifications:
+    - target: {fileID: 466145736684615665, guid: b801219df643045f5a280b3df4773034, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 82438832}
     - target: {fileID: 1534971975375366649, guid: b801219df643045f5a280b3df4773034, type: 3}
       propertyPath: door
       value: 
@@ -4649,7 +4658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e985da2fc3ca409ea638321b07620e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &549440117
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5697,7 +5706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &685721254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6992,7 +7001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e985da2fc3ca409ea638321b07620e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &829695603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7119,7 +7128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e985da2fc3ca409ea638321b07620e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &832469408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7325,7 +7334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!1 &856008897
 GameObject:
   m_ObjectHideFlags: 0
@@ -8204,7 +8213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1166042723776195291, guid: 0070cbfa44f06144c8ec4f160e4089de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.1
+      value: 19.1
       objectReference: {fileID: 0}
     - target: {fileID: 1166042723776195291, guid: 0070cbfa44f06144c8ec4f160e4089de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9280,7 +9289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &1094463247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12059,7 +12068,7 @@ PrefabInstance:
     - target: {fileID: 7595056101947304957, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 85487057}
     - target: {fileID: 7595056101947304957, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: relativePosition
       value: 0
@@ -12070,7 +12079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595056101947304958, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.8
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 7595056101947304958, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12078,7 +12087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595056101947304958, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.7
+      value: -25.2
       objectReference: {fileID: 0}
     - target: {fileID: 7595056101947304958, guid: 338b6feff03d8bc4ca7fbe5778d23107, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13555,7 +13564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!1 &1606580584
 GameObject:
   m_ObjectHideFlags: 0
@@ -14337,7 +14346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!1001 &1748727773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16038,7 +16047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &1978397250
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16536,7 +16545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e985da2fc3ca409ea638321b07620e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &2067230767
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16791,7 +16800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7fc5756c5b4c32ac8679b2752106b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 85487053}
 --- !u!54 &2106537739
 Rigidbody:
   m_ObjectHideFlags: 0
