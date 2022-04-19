@@ -34,7 +34,7 @@ public class FallingFloor : MonoBehaviour
 
     void OnTriggerStay(Collider other){
       if(other.gameObject.tag == "player"){
-        if(weight > 1f ^ !plate){
+        if(weight > 1f || !plate){
           Invoke("fallDown", 0.2f);
         }
       }
