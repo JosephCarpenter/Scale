@@ -21,7 +21,7 @@ public class CrumbFloor : MonoBehaviour
     void Update()
     {
       weight = cube.GetComponent<PlayerController>().playerSize;
-      if(gameObject.transform.position.y < -5){
+      if(gameObject.transform.position.y < -8){
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
         gameObject.transform.position = originalPosCrumb;
