@@ -4,48 +4,32 @@ using UnityEngine;
 
 public class CameraMoveScript : MonoBehaviour
 {
+
+
     public float smoothness;
     public Transform targetObject;
     private Vector3 initalOffset;
     private Vector3 cameraPosition;
+    public float sensitivity = 2.0f;
 
-    public enum RelativePosition { InitalPosition, Position1, Position2 }
-    public RelativePosition relativePosition;
-    public Vector3 position1;
-    public Vector3 position2;
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
+
 
     void Start()
-    {
-        relativePosition = RelativePosition.InitalPosition;
+    {  
         initalOffset = transform.position - targetObject.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        cameraPosition = targetObject.position + CameraOffset(relativePosition);
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothness*Time.fixedDeltaTime);
-        transform.LookAt(targetObject);
+        yaw += sensitivity * Input.GetAxis("Mouse X");
+        pitch -= sensitivity * Input.GetAxis("Mouse Y");
+
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
+        cameraPosition = targetObject.position + initalOffset;
+        transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothness);
     }
-
-    Vector3 CameraOffset(RelativePosition ralativePos)
-    {
-        Vector3 currentOffset;
-
-        switch (ralativePos)
-        {
-            case RelativePosition.Position1:
-                currentOffset = position1;
-                break;
-
-            case RelativePosition.Position2:
-                currentOffset = position2;
-                break;
-
-            default:
-                currentOffset = initalOffset;
-                break;
-        }
-        return currentOffset;
-    }
-}
+ }
 //https://www.codinblack.com/how-to-make-the-camera-follow-an-object-in-unity3d/

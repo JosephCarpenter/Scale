@@ -7,22 +7,27 @@ public class checkpoint : MonoBehaviour
     public bool activated = false;
     public static GameObject[] CheckPointsList;
 
-    
+    private bool reset = false; 
 
     // Start is called before the first frame update
     void Start()
     {
         CheckPointsList = GameObject.FindGameObjectsWithTag("CheckPoint");
-        
 
     }
 
+    void Update() {
+        if (Input.GetKeyUp("r")) {
+            reset = true;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyUp("r")) {
+        if (reset) {
             GameObject player = GameObject.FindGameObjectWithTag("player");
             player.transform.position = GetActiveCheckPointPosition();
+            reset = false;
         }
     }
     // Activate the checkpoint
