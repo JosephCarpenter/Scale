@@ -6,6 +6,8 @@ TagManager:
   tags:
   - water
   - ground
+  - player
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
