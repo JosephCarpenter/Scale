@@ -35,16 +35,20 @@ public class FallingFloor : MonoBehaviour
     void OnTriggerStay(Collider other){
       if(other.gameObject.tag == "player"){
         if(weight > 1f || !plate){
-          Invoke("fallDown", 0.2f);
+          speed = .1f;
+          var step =  speed;
+          floor.transform.position = Vector3.MoveTowards(floor.transform.position, target, step);
+          transform.position = Vector3.MoveTowards(transform.position, target, step);
+          // Invoke("fallDown", 0.2f);
         }
       }
     }
 
 
     void fallDown(){
-      speed = .1f;
-      var step =  speed;
-      floor.transform.position = Vector3.MoveTowards(floor.transform.position, target, step);
-      transform.position = Vector3.MoveTowards(transform.position, target, step);
+      // speed = .1f;
+      // var step =  speed;
+      // floor.transform.position = Vector3.MoveTowards(floor.transform.position, target, step);
+      // transform.position = Vector3.MoveTowards(transform.position, target, step);
     }
 }

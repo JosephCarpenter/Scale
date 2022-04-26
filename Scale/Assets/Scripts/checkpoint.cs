@@ -6,8 +6,9 @@ public class checkpoint : MonoBehaviour
 {
     public bool activated = false;
     public static GameObject[] CheckPointsList;
+    public GameObject player;
 
-    private bool reset = false; 
+    private bool reset = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,9 @@ public class checkpoint : MonoBehaviour
     void Update() {
         if (Input.GetKeyUp("r")) {
             reset = true;
+        }
+        if(player.transform.position.y < -10){
+          reset = true;
         }
     }
     // Update is called once per frame
@@ -75,4 +79,3 @@ public class checkpoint : MonoBehaviour
     }
 
 }
-

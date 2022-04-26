@@ -19,7 +19,7 @@ public class PlateLevel2 : MonoBehaviour
 
     }
     void OnTriggerStay(Collider other){
-      floor.transform.position = new Vector3(originalPos.x,-0.25f,originalPos.z);
+      floor.transform.position = new Vector3(originalPos.x,-.3f,originalPos.z);
     }
     void OnTriggerExit(Collider other){
       floor.transform.position = originalPos;
