@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoxWeight : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     private PlayerController player_script;
     private RigidbodyConstraints unfreeze;
     private Vector3 orignalPos;
@@ -12,6 +12,7 @@ public class BoxWeight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("player");
         player_script = player.GetComponent<PlayerController>();
         unfreeze = GetComponent<Rigidbody>().constraints;
         orignalPos = gameObject.transform.position;
@@ -22,9 +23,9 @@ public class BoxWeight : MonoBehaviour
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-        if (player_script.playerSize != 3f) {
+        if (player_script.playerSize < transform.localScale.x) {
             rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
-        } else if (player_script.playerSize == 3f) {
+        } else if (player_script.playerSize >= transform.localScale.x) {
             rigidbody.constraints = unfreeze;
         }
         if(player.transform.position.y < -8){

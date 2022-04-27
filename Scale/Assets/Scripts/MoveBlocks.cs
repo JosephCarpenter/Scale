@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveBlocks : MonoBehaviour
 {
     [SerializeField]
-    private float forceMagnitude;
+    private float forceMagnitude = 0.5f;
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
 

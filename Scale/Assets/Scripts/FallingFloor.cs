@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallingFloor : MonoBehaviour
 {
   public float weight;
-  public GameObject cube;
+  private GameObject cube;
   public GameObject floor;
   public Vector3 originalPosCrumb;
   public Vector3 originalPos;

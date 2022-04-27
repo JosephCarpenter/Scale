@@ -41,6 +41,15 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue * (1 / playerSize));
         }
+        
+        if (Input.GetKeyDown("left shift")) {
+            playerSpeed *= 2;
+        }
+        
+        if (Input.GetKeyUp("left shift")) {
+            playerSpeed /= 2;
+        }
+        
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
