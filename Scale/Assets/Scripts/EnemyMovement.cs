@@ -20,14 +20,26 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+ 
+        enemy.transform.LookAt(target.position);
+        
+    }
+
+
+}
+/*
+// Update is called once per frame
+    void Update()
+    {
         if (isFound) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            transform.LookAt(target.position, transform.up);
+            transform.LookAt(target.position);
             enemy.transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime); 
             enemy.transform.LookAt(target.position);
         }
     }
-
+    
     void OnTriggerEnter(Collider other) {
         if (other.tag == "player") {
             Debug.Log("Working1!");
@@ -40,4 +52,4 @@ public class EnemyMovement : MonoBehaviour
             isFound = false;
         }
     }
-}
+*/

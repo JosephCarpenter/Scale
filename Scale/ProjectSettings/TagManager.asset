@@ -8,6 +8,10 @@ TagManager:
   - ground
   - player
   - CheckPoint
+  - redLight
+  - overHeadLight
+  - spotLight
+  - directional
   layers:
   - Default
   - TransparentFX
