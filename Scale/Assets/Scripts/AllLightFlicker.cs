@@ -48,27 +48,8 @@ public class AllLightFlicker : MonoBehaviour
 
         if (other.tag == "player") {
 
-            teleport = true;
+            StartCoroutine(spooky(1));
 
-        }
-    }
-
-    void OnTriggerExit(Collider other) {
-        if (other.tag == "player") {
-
-            teleport = false;
-
-            foreach (GameObject lamps in redLights) {
-                lamps.GetComponent<Light>().intensity = 25;
-            } 
-            
-            foreach (GameObject lamps in OverHeadLights) {
-                lamps.GetComponent<Light>().intensity = 75;
-            }
-
-            foreach (GameObject lamps in spotLights) {
-                lamps.GetComponent<Light>().intensity = 1000;
-            }
         }
     }
 
@@ -97,6 +78,24 @@ public class AllLightFlicker : MonoBehaviour
             foreach (GameObject lamps in spotLights) {
                 lamps.GetComponent<Light>().intensity = lastSum / (float)smoothQueue.Count;
             }
+        }
+    }
+
+    IEnumerator spooky(int seconds) {
+        teleport = true;
+        yield return new WaitForSeconds(seconds);
+        teleport = false;
+
+        foreach (GameObject lamps in redLights) {
+            lamps.GetComponent<Light>().intensity = 25;
+        } 
+            
+        foreach (GameObject lamps in OverHeadLights) {
+            lamps.GetComponent<Light>().intensity = 75;
+        }
+
+        foreach (GameObject lamps in spotLights) {
+            lamps.GetComponent<Light>().intensity = 1000;
         }
     }
 
