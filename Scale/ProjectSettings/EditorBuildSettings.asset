@@ -8,7 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 097e6984ba350a44d9daf183aef1dc3b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BackUpScenePreUpgrade.unity
     guid: 810f0e0ad11f44272a86ac87f773ac82
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: dfe1963850d3821499f017162f662d64
+  - enabled: 1
+    path: Assets/Scenes/OpeningCutScene.unity
+    guid: 64041f1e221f3a144ad13f6c4e5ead76
+  - enabled: 1
+    path: Assets/Scenes/dan's scene.unity
+    guid: fa1df5c9239209a419c0baa4a0aa1a2c
   m_configObjects: {}

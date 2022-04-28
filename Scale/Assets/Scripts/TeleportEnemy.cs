@@ -24,14 +24,17 @@ public class TeleportEnemy : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         
         if (other.tag == "player") {
-            enemy.transform.position = new Vector3(x, y, z);
+            
             if (!hasTextPlayed) { 
                 StartCoroutine(playText(5));
             }
         }
     }
     IEnumerator playText(int seconds) {
-
+        
+        yield return new WaitForSeconds(1);
+        enemy.transform.position = new Vector3(x, y, z);
+        
         text.SetActive(true);
         image.SetActive(true);
         yield return new WaitForSeconds(seconds);
