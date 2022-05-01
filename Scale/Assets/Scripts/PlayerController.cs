@@ -41,20 +41,21 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue * (1 / playerSize));
         }
-        
+
         if (Input.GetKeyDown("left shift")) {
             playerSpeed *= 2;
         }
-        
+
         if (Input.GetKeyUp("left shift")) {
             playerSpeed /= 2;
         }
-        
+
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        
+
+
 
     }
 
@@ -70,8 +71,9 @@ public class PlayerController : MonoBehaviour
                 return;
             }
         }
-
-        gameObject.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
+        Vector3 scale = new Vector3(playerSize, playerSize, playerSize);
+        LeanTween.scale(gameObject, scale, 1.5f).setEaseOutElastic();
+        // gameObject.transform.localScale = new Vector3(playerSize, playerSize, playerSize);
     }
 
     // acts to grow the size to one of three different sizes if you are in water
