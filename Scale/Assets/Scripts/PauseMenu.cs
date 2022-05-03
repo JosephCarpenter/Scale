@@ -10,26 +10,32 @@ public class PauseMenu : MonoBehaviour
 
     void Start() {
         pauseMenu = GameObject.FindGameObjectsWithTag("PauseMenu");
+
         foreach (GameObject temp in pauseMenu) {
             temp.SetActive(false);
-            isUp = false;
+            
         }
+        isUp = false;
     }
 
-    void returnToGame() {
+    public void returnToGame() {
         foreach (GameObject temp in pauseMenu) {
             temp.SetActive(false);
         }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isUp = false;
     }
 
     void Update() {
         if (Input.GetKeyUp("escape")) {
             if (isUp) {
+                isUp = true;
                 foreach (GameObject temp in pauseMenu) {
                     temp.SetActive(false);
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
                 }
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else {
                 foreach (GameObject temp in pauseMenu) {
@@ -37,11 +43,12 @@ public class PauseMenu : MonoBehaviour
                 }
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                isUp = false;
             }
         }
     }
 
-    void returnToMainMenu() {
+    public void returnToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }
 }
