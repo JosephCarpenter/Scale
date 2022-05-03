@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void PlayAgain() {
-        SceneManager.LoadScene("BackUpScenePreUpgrade");
+        SceneManager.LoadScene("dan's scene");
     }
 
     public void QuitGame() {

@@ -27,7 +27,7 @@ public class Chase : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "player") {
+        if (other.tag == "player" && other.transform.localScale.x >= transform.localScale.x) {
             start = true;
         }
     }
