@@ -26,7 +26,7 @@ public class FallingFloor : MonoBehaviour
     void Update()
     {
       weight = cube.GetComponent<PlayerController>().playerSize;
-      if(gameObject.transform.position.y < -9.5){
+      if(cube.transform.position.y < -9 || Input.GetKeyUp("r")){
         gameObject.transform.position = originalPos;
         floor.transform.position = originalPosCrumb;
       }
