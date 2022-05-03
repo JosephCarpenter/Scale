@@ -12,6 +12,7 @@ TagManager:
   - overHeadLight
   - spotLight
   - directional
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
