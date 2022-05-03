@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void PlayAgain() {
-        SceneManager.LoadScene("dan's scene");
+        SceneManager.LoadScene("OpeningCutScene");
     }
 
     public void QuitGame() {
