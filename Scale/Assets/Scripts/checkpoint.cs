@@ -8,7 +8,7 @@ public class checkpoint : MonoBehaviour
     public static GameObject[] CheckPointsList;
     public GameObject player;
 
-    private bool reset = false;
+    public bool reset = false;
 
     // Start is called before the first frame update
     void Start()
