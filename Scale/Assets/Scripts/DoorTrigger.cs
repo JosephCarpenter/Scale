@@ -12,14 +12,14 @@ public class DoorTrigger : MonoBehaviour
     
     void OnTriggerEnter(Collider col) {
         if (!isOpened && col.transform.localScale.x >= transform.localScale.x) {
-            this.transform.position += new Vector3(0, -0.15f, 0);
+            this.transform.position += new Vector3(0, -0.10f, 0);
             isOpened = true;
         }
     }
     
     void OnTriggerExit(Collider col) {
         if (hold && isOpened && col.transform.localScale.x >= transform.localScale.x) {
-            this.transform.position -= new Vector3(0, -0.15f, 0);
+            this.transform.position -= new Vector3(0, -0.10f, 0);
             isOpened = false;
         }
     }

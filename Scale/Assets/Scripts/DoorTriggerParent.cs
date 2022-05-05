@@ -24,7 +24,7 @@ public class DoorTriggerParent : MonoBehaviour
                 raiseDoor = false;
         }
         if (raiseDoor) {
-            door.transform.position = doorDefaultPos + new Vector3(0, 4, 0);
+            door.transform.position = doorDefaultPos + new Vector3(0, 2, 0);
         }
         else {
             door.transform.position = doorDefaultPos;
