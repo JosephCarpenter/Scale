@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     public float playerSize = 1.0f;
+    private bool jumped = true;
 
     private void Start()
     {
@@ -39,6 +40,10 @@ public class PlayerController : MonoBehaviour
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
+            // Vector3 jumper = new Vector3(playerSize*2f, playerSize*.5f, playerSize*2f);
+            // LeanTween.scale(gameObject, jumper, 1.5f).setEaseOutCubic();
+            GetComponentInChildren<Animator>().SetTrigger("Stretch");
+            jumped = true;
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue * (1 / playerSize));
         }
 
@@ -93,5 +98,14 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+      if (jumped){
+        jumped = false;
+        GetComponentInChildren<Animator>().SetTrigger("Squash");
+      }
+    }
+
 
 }

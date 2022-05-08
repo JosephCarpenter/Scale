@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
         foreach (GameObject temp in pauseMenu) {
             temp.SetActive(false);
-            
+
         }
         isUp = false;
     }
