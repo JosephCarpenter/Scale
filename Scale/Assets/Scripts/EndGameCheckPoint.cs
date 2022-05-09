@@ -43,7 +43,7 @@ public class EndGameCheckPoint : MonoBehaviour
             player.transform.position = GetActiveCheckPointPosition();
 
             enemy.transform.position = GetActiveCheckPointPosition();
-            enemy.transform.position = new Vector3(enemy.transform.position.x + 10, enemy.transform.position.y, enemy.transform.position.z);
+            enemy.transform.position = new Vector3(enemy.transform.position.x + 25, enemy.transform.position.y, enemy.transform.position.z);
             dead = false;
         }
     }

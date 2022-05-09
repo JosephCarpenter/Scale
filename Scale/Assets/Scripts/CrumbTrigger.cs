@@ -26,7 +26,6 @@ public class CrumbTrigger : MonoBehaviour
         floor.GetComponent<Rigidbody>().useGravity = false;
         floor.GetComponent<Rigidbody>().isKinematic = true;
         floor.gameObject.transform.position = originalPosCrumb;
-        cube.transform.position = originalPosCube;
         floor.GetComponent<Rigidbody>().isKinematic = false;
     }
 

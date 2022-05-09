@@ -25,7 +25,6 @@ public class CrumbFloor : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
         gameObject.transform.position = originalPosCrumb;
-        cube.transform.position = originalPosCube;
         GetComponent<Rigidbody>().isKinematic = false;
       }
       // if(cube.transform.position.y < -10){

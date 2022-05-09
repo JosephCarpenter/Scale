@@ -21,13 +21,7 @@ public class FalseFloor : MonoBehaviour
   void Update()
   {
     weight = cube.GetComponent<PlayerController>().playerSize;
-    if(gameObject.transform.position.y < -5){
-      GetComponent<Rigidbody>().useGravity = false;
-      GetComponent<Rigidbody>().isKinematic = true;
-      gameObject.transform.position = originalPosCrumb;
-      cube.transform.position = originalPosCube;
-      GetComponent<Rigidbody>().isKinematic = false;
-    }
+    
     // if(cube.transform.position.y < -10){
     //   cube.transform.position = originalPosCube;
     // }

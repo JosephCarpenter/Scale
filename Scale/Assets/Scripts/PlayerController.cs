@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     public float playerSize = 1.0f;
-    private bool jumped = true;
+    private bool jumped = false;
 
     private void Start()
     {

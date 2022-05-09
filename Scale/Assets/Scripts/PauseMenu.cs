@@ -29,20 +29,20 @@ public class PauseMenu : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyUp("escape")) {
-            if (isUp) {
+            if (!isUp) {
                 isUp = true;
-                foreach (GameObject temp in pauseMenu) {
-                    temp.SetActive(false);
-                }
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else {
                 foreach (GameObject temp in pauseMenu) {
                     temp.SetActive(true);
                 }
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+            }
+            else {
+                foreach (GameObject temp in pauseMenu) {
+                    temp.SetActive(false);
+                }
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 isUp = false;
             }
         }

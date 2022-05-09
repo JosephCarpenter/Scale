@@ -10,11 +10,6 @@ public class checkpoint : MonoBehaviour
 
     public bool reset = false;
 
-    public GameObject enemy;
-    private Vector3 enemyOGPosition;
-
-    private bool EndGame;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +21,16 @@ public class checkpoint : MonoBehaviour
         if (Input.GetKeyUp("r")) {
             reset = true;
         }
-        if(player.transform.position.y < -10){
+        if (player.transform.position.y == -10){
           reset = true;
         }
+        
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if (reset) {
             GameObject player = GameObject.FindGameObjectWithTag("player");
             player.transform.position = GetActiveCheckPointPosition();
