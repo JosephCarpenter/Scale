@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
@@ -12,10 +13,20 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     public float playerSize = 1.0f;
     private bool jumped = false;
+    public AudioSource walking;
+    public AudioSource shrinking;
+    public AudioSource pushing;
+    public AudioSource againstBlock;
 
     private void Start()
     {
+        walking.loop = true;
+        walking.Play(0);
+        pushing.loop = true;
+        // pushing.Play(0);
+        // pushing.Pause();
         controller = this.GetComponent<CharacterController>();
+        
     }
 
     void Update()
@@ -34,7 +45,11 @@ public class PlayerController : MonoBehaviour
 
         if (move != Vector3.zero)
         {
+            walking.UnPause();
             gameObject.transform.forward = move;
+        }
+        else {
+            walking.Pause();
         }
 
         // Changes the height position of the player..
@@ -68,9 +83,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("q")) {
             if (playerSize == 3f) {
                 playerSize = 2f;
+                shrinking.Play();
             }
             else if (playerSize == 2f) {
                 playerSize = 1f;
+                shrinking.Play();
             }
             else {
                 return;
@@ -105,6 +122,23 @@ public class PlayerController : MonoBehaviour
         jumped = false;
         GetComponentInChildren<Animator>().SetTrigger("Squash");
       }
+    }
+    
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "cube") { 
+            // transform.localScale = new Vector3(6f, 6f, 6f);
+            Debug.Log("Collided");
+            // if (playerSize < other.transform.localScale.x) {
+            //     againstBlock.Play();
+            // }
+            // else {
+            //     pushing.UnPause();
+            // }
+        }
+    }
+    
+    void OnCollisionExit(Collision other) {
+        pushing.Pause();
     }
 
 

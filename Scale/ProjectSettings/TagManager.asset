@@ -14,6 +14,8 @@ TagManager:
   - directional
   - PauseMenu
   - EndGameCheckPoint
+  - crumb
+  - cube
   layers:
   - Default
   - TransparentFX
