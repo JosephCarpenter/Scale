@@ -27,6 +27,10 @@ public class FallingFloor : MonoBehaviour
     {
       weight = cube.GetComponent<PlayerController>().playerSize;
      
+      if ((cube.transform.position.y < -5) || (Input.GetKeyDown("r"))) {
+          gameObject.transform.position = originalPos;
+          floor.transform.position = originalPosCrumb;
+      }
     }
 
     void OnTriggerStay(Collider other){
