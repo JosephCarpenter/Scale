@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource shrinking;
     public AudioSource pushing;
     public AudioSource againstBlock;
+    public AudioSource slurping;
 
     private void Start()
     {
@@ -104,9 +105,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown("e")) {
                 if (playerSize == 1f) {
                     playerSize = 2f;
+                    slurping.Play();
                 }
                 else if (playerSize == 2f) {
                     playerSize = 3f;
+                    slurping.Play();
                 }
                 else {
                     return;
